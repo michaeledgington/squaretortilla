@@ -1,0 +1,205 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><head>
+	<title>jQuery AutoTab Plugin</title>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="description" content="A dynamic job adding Script by Mathachew at LousyLlama.com">
+	<meta name="keywords" content="jQuery, Rotating Banner, Lousy Llama Productions">
+	<meta name="copyright" content="none">
+	<meta name="robots" content="ALL">
+	<meta name="language" content="EN">
+
+	<link rel="Shortcut Icon" href="file:///Lion/Users/dalcool/Documents/Projects/www/favicon.ico" type="image/x-icon">
+<link href="file:///Lion/Users/dalcool/Documents/Projects/www/css/bootstrap.css" rel="stylesheet">
+    
+    <link href="file:///Lion/Users/dalcool/Documents/Projects/www/css/bootstrap-responsive.css" rel="stylesheet">
+	<!--[if IE 7]>
+	<link rel="stylesheet" href="../ie.css" type="text/css" media="screen, projection" />
+	<![endif]-->
+
+	<script src="../js/jquery.js"></script>
+    <script src="../js/jquery.autotab.js"></script>
+	<script type="text/javascript">
+	<!--
+	$(document).ready(function() {
+		// Number example
+		$('#area_code').autotab({ target: $('#number1'), format: 'numeric' });
+		$('#number1').autotab({ target: $('#number2'), format: 'numeric', previous: $('#area_code') });
+		$('#number2').autotab({ previous: $('#number1'), format: 'numeric' });
+		$('#ssn1').autotab({ target: $('#ssn2'), format: 'numeric' });
+		$('#ssn2').autotab({ target: $('#ssn3'), format: 'numeric', previous: $('#ssn1') });
+		$('#ssn3').autotab({ previous: $('#ssn2'), format: 'numeric' });
+
+		// Text example
+		$('#text1').autotab({ target: $('#text2'), format: 'text' });
+		$('#text2').autotab({ target: $('#text3'), format: 'text', previous: $('#text1') });
+		$('#text3').autotab({ format: 'text', previous: $('#text2') });
+
+		// Alpha example
+		$('#alpha1').autotab({ target: $('#alpha2'), format: 'alpha' });
+		$('#alpha2').autotab({ target: $('#alpha3'), format: 'alpha', previous: $('#alpha1') });
+		$('#alpha3').autotab({ target: $('#alpha4'), format: 'alpha', previous: $('#alpha2') });
+		$('#alpha4').autotab({ target: $('#alpha5'), format: 'alpha', previous: $('#alpha3') });
+		$('#alpha5').autotab({ previous: $('#alpha4'), format: 'alpha' });
+
+		// Alphanumeric example
+		$('#alphanumeric1').autotab({ target: $('#alphanumeric2'), format: 'alphanumeric', uppercase: true });
+		$('#alphanumeric2').autotab({ target: $('#alphanumeric3'), format: 'alphanumeric', uppercase: true, previous: $('#alphanumeric1') });
+		$('#alphanumeric3').autotab({ target: $('#alphanumeric4'), format: 'alphanumeric', uppercase: true, previous: $('#alphanumeric2') });
+		$('#alphanumeric4').autotab({ target: $('#alphanumeric5'), format: 'alphanumeric', uppercase: true, previous: $('#alphanumeric3') });
+		$('#alphanumeric5').autotab({ previous: $('#alphanumeric4'), format: 'alphanumeric', uppercase: true });
+
+		// All example
+		$('#all1').autotab({ target: $('#all2') });
+		$('#all2').autotab({ target: $('#all3'), previous: $('#all1') });
+		$('#all3').autotab({ target: $('#all4'), previous: $('#all2') });
+		$('#all4').autotab({ target: $('#all5'), previous: $('#all3') });
+		$('#all5').autotab({ previous: $('#all4') });
+	});
+	//-->
+	</script>
+</head>
+
+<body>
+<h2>jQuery AutoTab Plugin</h2>
+
+<p>Sometimes a project's specs calls for consistent data formatting and a find/replace via a regular expression doesn't always work for you. Information like a phone number, serial number, product key, social security number, etc. are entered in individual text boxes and are formatted to your liking (or the specs liking). One desired feature on each of these individual text boxes is to automatically focus on a box when one is filled. While we're at it, why not add a backspace functionality too? You know, when there's nothing in the box, and you hit backspace, it goes to the previous text box. We'll also throw in a filter, so that the text box contains only text, alpha, numeric, alphanumeric, or all characters. Yes, it can do that and more! Uppercase or lowercase text? Sure! Go ahead, try it out for yourself!</p>
+
+<p>One side note: I'm currently working on a way to reduce the amount of information being passed to the plugin. I had one implementation working, but it didn't have room for specifying what element to focus on when the limit was reached. So, for now this is the crude method. Enjoy until I slim the usage down.</p>
+
+<h3>Numbers only</h3>
+
+<input class="span1" type="number" name="area_code" id="area_code" maxlength="3" size="3" value="">
+                                <input class="span1" type="number" name="number1" id="number1" maxlength="3" size="3" value="">
+                               <input class="span2" type="number" name="number2" id="number2" maxlength="4" size="5" value="">
+
+<table>
+	<tbody><tr>
+		<td colspan="5"><strong>Phone Number:</strong></td>
+	</tr>
+	<tr>
+		<td><input type="text" name="area_code" id="area_code" maxlength="3" size="3" value=""></td>
+		<td>-</td>
+		<td><input type="text" name="number1" id="number1" maxlength="3" size="3" value=""></td>
+		<td>-</td>
+		<td><input type="text" name="number2" id="number2" maxlength="4" size="5" value=""></td>
+	</tr>
+	<tr>
+		<td colspan="5"><strong>Social Security Number:</strong></td>
+	</tr>
+	<tr>
+		<td><input type="text" name="ssn1" id="ssn1" maxlength="3" size="3" value=""></td>
+		<td>-</td>
+		<td><input type="text" name="ssn2" id="ssn2" maxlength="2" size="3" value=""></td>
+		<td>-</td>
+		<td><input type="text" name="ssn3" id="ssn3" maxlength="4" size="5" value=""></td>
+	</tr>
+</tbody></table>
+<pre>$(document).ready(function() {
+	$('#area_code').autotab({ target: $('#number1'), format: 'numeric' });
+	$('#number1').autotab({ target: $('#number2'), format: 'numeric', previous: $('#area_code') });
+	$('#number2').autotab({ previous: $('#number1'), format: 'numeric' });
+	$('#ssn1').autotab({ target: $('#ssn2'), format: 'numeric' });
+	$('#ssn2').autotab({ target: $('#ssn3'), format: 'numeric', previous: $('#ssn1') });
+	$('#ssn3').autotab({ previous: $('#ssn2'), format: 'numeric' });
+});
+</pre>
+
+<hr>
+
+<h3>Text characters only</h3>
+
+<table>
+	<tbody><tr>
+		<td><input type="text" name="text1" id="text1" maxlength="5" size="4" value=""></td>
+		<td>-</td>
+		<td><input type="text" name="text2" id="text2" maxlength="4" size="4" value=""></td>
+		<td>-</td>
+		<td><input type="text" name="text3" id="text3" maxlength="5" size="4" value=""></td>
+	</tr>
+</tbody></table>
+<pre>$(document).ready(function() {
+	$('#text1').autotab({ target: $('#text2'), format: 'text' });
+	$('#text2').autotab({ target: $('#text3'), format: 'text', previous: $('#text1') });
+	$('#text3').autotab({ format: 'text', previous: $('#text2') });
+});
+</pre>
+
+<hr>
+
+<h3>Alpha only</h3>
+
+<table>
+	<tbody><tr>
+		<td><input type="text" name="alpha1" id="alpha1" maxlength="5" size="4" value=""></td>
+		<td>-</td>
+		<td><input type="text" name="alpha2" id="alpha2" maxlength="5" size="4" value=""></td>
+		<td>-</td>
+		<td><input type="text" name="alpha3" id="alpha3" maxlength="5" size="4" value=""></td>
+		<td>-</td>
+		<td><input type="text" name="alpha4" id="alpha4" maxlength="5" size="4" value=""></td>
+		<td>-</td>
+		<td><input type="text" name="alpha5" id="alpha5" maxlength="5" size="4" value=""></td>
+	</tr>
+</tbody></table>
+<pre>$(document).ready(function() {
+	$('#alpha1').autotab({ target: $('#alpha2'), format: 'alpha' });
+	$('#alpha2').autotab({ target: $('#alpha3'), format: 'alpha', previous: $('#alpha1') });
+	$('#alpha3').autotab({ target: $('#alpha4'), format: 'alpha', previous: $('#alpha2') });
+	$('#alpha4').autotab({ target: $('#alpha5'), format: 'alpha', previous: $('#alpha3') });
+	$('#alpha5').autotab({ previous: $('#alpha4'), format: 'alpha' });
+});
+</pre>
+
+<hr>
+
+<h3>Uppercase letters and numbers (Converts lowercase letters to uppercase)</h3>
+<table>
+	<tbody><tr>
+		<td><input type="text" name="alphanumeric1" id="alphanumeric1" maxlength="5" size="4" value=""></td>
+		<td>-</td>
+		<td><input type="text" name="alphanumeric2" id="alphanumeric2" maxlength="5" size="4" value=""></td>
+		<td>-</td>
+		<td><input type="text" name="alphanumeric3" id="alphanumeric3" maxlength="5" size="4" value=""></td>
+		<td>-</td>
+		<td><input type="text" name="alphanumeric4" id="alphanumeric4" maxlength="5" size="4" value=""></td>
+		<td>-</td>
+		<td><input type="text" name="alphanumeric5" id="alphanumeric5" maxlength="5" size="4" value=""></td>
+	</tr>
+</tbody></table>
+<pre>$(document).ready(function() {
+	$('#alphanumeric1').autotab({ target: $('#alphanumeric2'), format: 'alphanumeric', uppercase: true });
+	$('#alphanumeric2').autotab({ target: $('#alphanumeric3'), format: 'alphanumeric', uppercase: true, previous: $('#alphanumeric1') });
+	$('#alphanumeric3').autotab({ target: $('#alphanumeric4'), format: 'alphanumeric', uppercase: true, previous: $('#alphanumeric2') });
+	$('#alphanumeric4').autotab({ target: $('#alphanumeric5'), format: 'alphanumeric', uppercase: true, previous: $('#alphanumeric3') });
+	$('#alphanumeric5').autotab({ previous: $('#alphanumeric4'), format: 'alphanumeric', uppercase: true });
+});
+</pre>
+
+<hr>
+
+<h3>Any and all characters.</h3>
+<table>
+	<tbody><tr>
+		<td><input type="text" name="all1" id="all1" maxlength="5" size="4" value=""></td>
+		<td>-</td>
+		<td><input type="text" name="all2" id="all2" maxlength="5" size="4" value=""></td>
+		<td>-</td>
+		<td><input type="text" name="all3" id="all3" maxlength="5" size="4" value=""></td>
+		<td>-</td>
+		<td><input type="text" name="all4" id="all4" maxlength="5" size="4" value=""></td>
+		<td>-</td>
+		<td><input type="text" name="all5" id="all5" maxlength="5" size="4" value=""></td>
+	</tr>
+</tbody></table>
+<pre>$(document).ready(function() {
+	$('#all1').autotab({ target: $('#all2') });
+	$('#all2').autotab({ target: $('#all3'), previous: $('#all1') });
+	$('#all3').autotab({ target: $('#all4'), previous: $('#all2') });
+	$('#all4').autotab({ target: $('#all5'), previous: $('#all3') });
+	$('#all5').autotab({ previous: $('#all4') });
+});
+</pre>
+
+<p><a href="/">&lt;&lt; Go Back</a></p>
+
+</body></html>

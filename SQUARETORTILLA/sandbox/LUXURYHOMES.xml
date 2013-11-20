@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20001102//EN"    "http://www.w3.org/TR/2000/CR-SVG-20001102/DTD/svg-20001102.dtd" [
+	<!ENTITY ns_graphs "http://ns.adobe.com/Graphs/1.0/">
+	<!ENTITY ns_vars "http://ns.adobe.com/Variables/1.0/">
+	<!ENTITY ns_imrep "http://ns.adobe.com/ImageReplacement/1.0/">
+	<!ENTITY ns_custom "http://ns.adobe.com/GenericCustomNamespace/1.0/">
+	<!ENTITY ns_flows "http://ns.adobe.com/Flows/1.0/">
+<!ENTITY ns_extend "http://ns.adobe.com/Extensibility/1.0/">
+]>
+<svg>
+<variableSets  xmlns="&ns_vars;">
+	<variableSet  locked="none" varSetName="binding1">
+		<variables>
+			<variable  varName="Variable1" category="http://ns.adobe.com/Flows/1.0/" trait="textcontent"></variable>
+			<variable  varName="Variable2" category="http://ns.adobe.com/Flows/1.0/" trait="textcontent"></variable>
+			<variable  varName="Variable3" category="http://ns.adobe.com/Flows/1.0/" trait="textcontent"></variable>
+			<variable  varName="Variable4" category="http://ns.adobe.com/Flows/1.0/" trait="textcontent"></variable>
+			<variable  varName="Variable5" category="http://ns.adobe.com/Flows/1.0/" trait="textcontent"></variable>
+			<variable  varName="Variable6" category="http://ns.adobe.com/Flows/1.0/" trait="textcontent"></variable>
+			<variable  varName="Variable7" category="http://ns.adobe.com/Flows/1.0/" trait="textcontent"></variable>
+			<variable  varName="Variable8" category="http://ns.adobe.com/Flows/1.0/" trait="textcontent"></variable>
+			<variable  varName="Variable9" category="http://ns.adobe.com/Flows/1.0/" trait="textcontent"></variable>
+			<variable  varName="Variable10" category="http://ns.adobe.com/Flows/1.0/" trait="textcontent"></variable>
+			<variable  varName="Variable11" category="http://ns.adobe.com/Flows/1.0/" trait="textcontent"></variable>
+			<variable  varName="Variable12" category="http://ns.adobe.com/Flows/1.0/" trait="textcontent"></variable>
+		</variables>
+		<v:sampleDataSets  xmlns:v="http://ns.adobe.com/Variables/1.0/" xmlns="http://ns.adobe.com/GenericCustomNamespace/1.0/">
+			<v:sampleDataSet  dataSetName="Data Set 1">
+				<Variable1>
+					<p>TEXT: FREEHOME  TO: 32323</p>
+				</Variable1>
+				<Variable2>
+					<p>KEYWORD</p>
+				</Variable2>
+				<Variable3>
+					<p>KEYWORD</p>
+				</Variable3>
+				<Variable4>
+					<p>KEYWORD</p>
+				</Variable4>
+				<Variable5>
+					<p>KEYWORD</p>
+				</Variable5>
+				<Variable6>
+					<p>Search On The Go!</p>
+					<p>Get our FREE APP,</p>
+					<p>Text: HOUSTON</p>
+					<p>To: 32323</p>
+					<p>Sent directly to your</p>
+					<p>smartphone.</p>
+				</Variable6>
+				<Variable7>
+					<p>By texting DATA to 32323, potential buyers are able to instantly view your listing while standing in your front yard!
+						</p>
+				</Variable7>
+				<Variable8>
+					<p>DATA</p>
+				</Variable8>
+				<Variable9>
+					<p>Wil Gaskins</p>
+				</Variable9>
+				<Variable10>
+					<p>Brokerage</p>
+				</Variable10>
+				<Variable11>
+					<p>Phone</p>
+				</Variable11>
+				<Variable12>
+					<p>email</p>
+				</Variable12>
+			</v:sampleDataSet>
+			<v:sampleDataSet  dataSetName="Data Set 2">
+				<Variable1>
+					<p>TEXT: LUXURYHOMES  TO: 32323</p>
+				</Variable1>
+				<Variable2>
+					<p>LUXURYHOMES</p>
+				</Variable2>
+				<Variable3>
+					<p>LUXURYHOMES</p>
+				</Variable3>
+				<Variable4>
+					<p>LUXURYHOMES</p>
+				</Variable4>
+				<Variable5>
+					<p>LUXURYHOMES</p>
+				</Variable5>
+				<Variable6>
+					<p>Search On The Go!</p>
+					<p>Get our FREE APP,</p>
+					<p>Text: LUXURYHOMES</p>
+					<p>To: 32323</p>
+					<p>Sent directly to your</p>
+					<p>smartphone.</p>
+				</Variable6>
+				<Variable7>
+					<p>
+						By texting LUXURYHOMES to 32323, potential buyers are able to instantly view your listing while standing in your front yard!
+						</p>
+				</Variable7>
+				<Variable8>
+					<p>LUXURYHOMES</p>
+				</Variable8>
+				<Variable9>
+					<p>Luxe Estates Collection</p>
+				</Variable9>
+				<Variable10>
+					<p>7456 W. Sahara Avenue Suite 102 Las Vegas, NV 89117</p>
+				</Variable10>
+				<Variable11>
+					<p>(702) 684-6100</p>
+				</Variable11>
+				<Variable12>
+					<p>realestatezar@aol.com</p>
+				</Variable12>
+			</v:sampleDataSet>
+		</v:sampleDataSets>
+	</variableSet>
+</variableSets>
+</svg>
